@@ -1,0 +1,193 @@
+:root{
+    /* Elements */
+    --bg-color: #004643;
+    --headline: #fffffe;
+    --pg-color: #abd1c6;
+    --button-color: #f9bc60;
+    --text-button: #001e1d;
+    /* Ilustration */
+    --stroke: #001e1d;
+    --main: #e8e4e6;
+    --highlight: #f9bc60;
+    --secondary: #abd1c6;
+    --tertiary: #e16162;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* Setup space elements */
+    --space1: 8px;
+    --space2: 16px;
+    --space3: 24px;
+    --space4: 32px;
+}
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    height: 100%;
+    overflow-x: hidden;
+}
+/* Styling header */
+header{
+    position: sticky;
+    top: 0;
+    height: 10vh;
+}
+header{
+    background-color: var(--secondary);
+}
+nav{
+    height: 100%;
+}
+nav ul{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: inherit;
+}
+nav ul li{
+    list-style: none;
+    height: inherit;
+    padding-right: var(--space1);
+}
+nav ul li a{
+    text-decoration: none;
+    height: inherit;
+    color: var(--stroke);
+    display: flex;
+    align-items: center;
+}
+nav ul li:hover, li:focus{
+    background: var(--button-color);
+    color: var(--text-button);
+}
+/* Styling welcome section */
+#welcome-section{
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-color);
+    color: var(--headline);
+}
+#welcome-section h1{
+    font-size: clamp(2rem, 0.8750rem + 5.0000vw, 3.5rem);
+}
+#welcome-section p{
+    color: var(--highlight);
+}
+/* Styling projects section */
+#projects{
+    background-color: var(--secondary);
+}
+#projects h2{
+    text-align: center;
+    text-decoration: underline;
+    color: var(--stroke);
+    padding: var(--space4) 0 var(--space3);
+}
+#projects .content-wrapper{
+    margin: 0 auto;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 
+        repeat(auto-fill, minmax(min(350px, 100%),1fr));
+    justify-items: center;
+    padding: var(--space3);
+}
+#projects .content-wrapper article{
+    width: 300px;
+    height: 230px;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 16px;
+}
+#projects .content-wrapper a{
+    background-color: var(--highlight);
+    width: inherit;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px 16px 0 0;
+}
+.project-title{
+    color: var(--main);
+}
+/* Styling working experience */
+#work_experience{
+    background-color: var(--bg-color);
+}
+#work_experience h2{
+    color: var(--headline);
+    text-align: center;
+    text-decoration: underline;
+    padding: var(--space4) 0 var(--space3);
+}
+#work_experience .content-wrapper{
+    margin-left: 0;
+    margin-right: 0;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 
+        repeat(auto-fill, minmax(min(350px, 100%),1fr));
+    justify-items: center;
+    padding: var(--space3);
+}
+#work_experience .content-wrapper .article-wrapper .second-wrapper{
+    background-color: var(--secondary);
+    width: 300px;
+    padding: var(--space2);
+    border-radius: 8px;
+}
+.second-wrapper h3{
+    color: var(--stroke);
+}
+#work_experience .content-wrapper .article-wrapper li{
+    list-style: none;
+}
+/* Styling contact section */
+#profile-links{
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary);
+}
+#profile-links h2{
+    color: var(--tertiary);
+    padding: var(--space4);
+}
+#profile-links .content-wrapper{
+    display: flex;
+}
+#profile-links a{
+    display: inline-block;
+    text-decoration: none;
+    color: var(--stroke);
+    transition: transform 250ms;
+}
+#profile-links .content-wrapper div{
+    padding: var(--space2);
+}
+#profile-links .content-wrapper div:hover a{
+    transform: translateY(-10px);
+}
+@media (max-width: 550px){
+    :root{
+        --space1: 4px;
+        --space2: 8px;
+        --space3: 16px;
+        --space4: 24px;
+    }
+    #projects .content-wrapper{
+        grid-template-columns: 
+            repeat(auto-fill, minmax(min(300px, 100%),1fr));
+    }
+}
